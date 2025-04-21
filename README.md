@@ -25,33 +25,27 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+### Step 1: Deploy and Connect Azure Virtual Machines
 
-<h2>Actions and Observations</h2>
+- Deploy one **Windows 10 VM** and one **Ubuntu Server 20.04 VM**.
+- Ensure both VMs are on the same virtual network and subnet.
+- Connect to the Windows VM using RDP.
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+### Step 2: Install Wireshark and Capture Traffic
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+- Install **Wireshark** on the Windows VM.
+- Begin capturing network packets on the primary interface.
+- Observe background traffic and identify common protocols (DNS, ICMP, etc.).
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+### Step 3: Generate and Inspect Traffic Between VMs
+
+- Use tools like `ping`, `curl`, `ssh`, and `telnet` from one VM to the other.
+- Watch how this traffic appears in Wireshark.
+- Analyze packet details, source/destination IPs, and protocols.
+
+### Step 4: Modify and Test Network Security Groups (NSGs)
+
+- Apply NSG rules to block/allow specific types of traffic (e.g., block ICMP, allow SSH).
+- Re-run tests to verify which traffic is allowed or denied.
+- Observe real-time effects of NSGs on traffic visibility and flow in Wireshark.
+
